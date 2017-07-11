@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrafGenerator.MultipleTransformableConfigs", "src\GrafGenerator.MultipleTransformableConfigs\GrafGenerator.MultipleTransformableConfigs.csproj", "{DC07DC30-7E47-475F-846D-64F43407C9A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{6413048B-3AE4-4712-A87D-A8489CFCD6F5}"
+	ProjectSection(SolutionItems) = preProject
+		build\build-and-deploy.ps1 = build\build-and-deploy.ps1
+		build\Invoke-MsBuild.psm1 = build\Invoke-MsBuild.psm1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{43E0D92E-26BE-473C-8451-AFD6F278A503}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94D95263-A357-4F9A-8A15-CEBB46E773A1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC07DC30-7E47-475F-846D-64F43407C9A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC07DC30-7E47-475F-846D-64F43407C9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC07DC30-7E47-475F-846D-64F43407C9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC07DC30-7E47-475F-846D-64F43407C9A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC07DC30-7E47-475F-846D-64F43407C9A4} = {43E0D92E-26BE-473C-8451-AFD6F278A503}
+	EndGlobalSection
+EndGlobal
