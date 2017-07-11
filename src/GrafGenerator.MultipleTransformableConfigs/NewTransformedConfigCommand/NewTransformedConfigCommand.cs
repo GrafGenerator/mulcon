@@ -5,10 +5,10 @@ using System.Management.Automation;
 
 // ReSharper disable AssignNullToNotNullAttribute
 
-namespace GrafGenerator.MultipleTransformableConfigs.ResxLocalizeCommand
+namespace GrafGenerator.MultipleTransformableConfigs.NewTransformedConfigCommand
 {
-    [Cmdlet(VerbsCommon.New, "LocalizedResx", DefaultParameterSetName = "DefaultParameterSet")]
-    public class ResxLocalizeCommand : PSCmdlet
+    [Cmdlet(VerbsCommon.New, "TransformedConfig", DefaultParameterSetName = "DefaultParameterSet")]
+    public class NewTransformedConfigCommand : PSCmdlet
     {
         #region Parameters
 

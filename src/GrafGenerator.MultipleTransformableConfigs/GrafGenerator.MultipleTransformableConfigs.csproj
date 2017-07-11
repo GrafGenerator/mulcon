@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResxLocalizeCommand\ResxLocalizeCommand.cs" />
+    <Compile Include="NewTransformedConfigCommand\NewTransformedConfigCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
