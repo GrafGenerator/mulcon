@@ -34,19 +34,19 @@ namespace GrafGenerator.MultipleTransformableConfigs.NewTransformedConfigCommand
 
         [Parameter(ParameterSetName = "DefaultParameterSet")]
         [Parameter(Mandatory = false)]
-        public bool? GenerateConfigFiles { get; set; }
+        public SwitchParameter GenerateConfigFiles { get; set; }
 
         [Parameter(ParameterSetName = "DefaultParameterSet")]
         [Parameter(Mandatory = false)]
-        public bool? GenerateProjectEntries { get; set; }
+        public SwitchParameter GenerateProjectEntries { get; set; }
 
         [Parameter(ParameterSetName = "DefaultParameterSet")]
         [Parameter(Mandatory = false)]
-        public bool? PreserveExistingFiles { get; set; }
+        public SwitchParameter PreserveExistingFiles { get; set; }
 
         [Parameter(ParameterSetName = "DefaultParameterSet")]
         [Parameter(Mandatory = false)]
-        public bool? PreserveExistingEntries { get; set; }
+        public SwitchParameter PreserveExistingEntries { get; set; }
 
         [Parameter(ParameterSetName = "DefaultParameterSet")]
         [Parameter(Mandatory = false)]
@@ -94,25 +94,6 @@ namespace GrafGenerator.MultipleTransformableConfigs.NewTransformedConfigCommand
 
             Configurations = Configurations.Distinct().ToArray();
 
-            if (!GenerateConfigFiles.HasValue)
-            {
-                GenerateConfigFiles = false;
-            }
-
-            if (!GenerateProjectEntries.HasValue)
-            {
-                GenerateProjectEntries = false;
-            }
-            if (!PreserveExistingFiles.HasValue)
-            {
-                PreserveExistingFiles = true;
-            }
-
-            if (!PreserveExistingEntries.HasValue)
-            {
-                PreserveExistingEntries = true;
-            }
-
             if (string.IsNullOrWhiteSpace(VsVersion))
             {
                 VsVersion = DefaultVsVersion;
@@ -133,7 +114,7 @@ namespace GrafGenerator.MultipleTransformableConfigs.NewTransformedConfigCommand
             var targetFileInfos = Configurations.Select(c => new FileInfo(Path.Combine(configsFolder,
                 string.Format(TransformFileNameTemplate, configFileName, c, configFileExtension))));
 
-            if (GenerateConfigFiles != null && GenerateConfigFiles.Value)
+            if (GenerateConfigFiles)
             {
                 WriteConfigFiles(targetConfigInfo, configsBaseInfo, targetFileInfos);
             }
@@ -152,7 +133,7 @@ namespace GrafGenerator.MultipleTransformableConfigs.NewTransformedConfigCommand
 
             foreach (var file in files)
             {
-                if (PreserveExistingFiles != null && PreserveExistingFiles.Value && file.Info.Exists)
+                if (PreserveExistingFiles && file.Info.Exists)
                     continue;
 
                 var content = file.IsTransform ? TransformTemplate : ConfigTemplate;
