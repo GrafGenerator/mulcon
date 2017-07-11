@@ -2,9 +2,10 @@
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
+
 // ReSharper disable AssignNullToNotNullAttribute
 
-namespace GrafGenerator.ResxLocalize.ResxLocalizeCommand
+namespace GrafGenerator.MultipleTransformableConfigs.ResxLocalizeCommand
 {
     [Cmdlet(VerbsCommon.New, "LocalizedResx", DefaultParameterSetName = "DefaultParameterSet")]
     public class ResxLocalizeCommand : PSCmdlet
